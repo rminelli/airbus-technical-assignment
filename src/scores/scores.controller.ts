@@ -29,12 +29,12 @@ export class ScoresController {
     description: 'Get Successfully',
     type: ScoresResponseInterface,
   })
-  async findOneByGridId(
+  async findByGridId(
     @Query()
     pagination: PaginationInterface,
     @Param('id') id: string,
   ) {
-    return await this.scoresService.findOneByGridId(+id, pagination);
+    return await this.scoresService.findByGridId(+id, pagination);
   }
 
   @Get(':id/location')

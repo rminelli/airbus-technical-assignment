@@ -11,7 +11,7 @@ export class ScoresService {
     @InjectRepository(Score)
     private readonly gridRepository: Repository<Score>,
   ) {}
-  async findOneByGridId(id: number, pagination: PaginationInterface) {
+  async findByGridId(id: number, pagination: PaginationInterface) {
     const scoreResult = await this.gridRepository.find({
       where: { grid: { id } },
       skip: pagination.currentPage * pagination.pageSize,
