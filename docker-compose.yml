@@ -15,7 +15,7 @@ services:
   backend-airbus:
       build: 
         context: .
-        dockerfile: ./Dockerfile.apps
+        dockerfile: ./Dockerfile
       image: airbus-apps:latest
       container_name: backend-airbus
       command: npm run start:dev:docker
