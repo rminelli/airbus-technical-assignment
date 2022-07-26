@@ -1,0 +1,6 @@
+node_modules
+travis
+docs
+.git
+.vscode
+**/templates/**/

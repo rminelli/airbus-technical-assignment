@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  postgresql-airbus-db:
+    image: postgis/postgis
+    container_name: postgresql-airbus
+    restart: always
+    networks:
+      - airbus-network
+    volumes:
+      -  airbus-db-data:/var/lib/postgresql/data
+    env_file:
+      - .development.docker.env
+    ports:
+      - 5432:5432
+  backend-airbus:
+      build: 
+        context: .
+        dockerfile: ./Dockerfile.apps
+      image: airbus-apps:latest
+      container_name: backend-airbus
+      command: npm run start:dev:docker
+      restart: always
+      depends_on:
+        - postgresql-airbus-db
+        - rabbitmq-airbus
+      env_file:
+        - .development.docker.env
+      ports:
+        - 3001:3001  
+      networks:
+      - airbus-network
+
+volumes:
+ airbus-db-data:
+
+networks:
+   airbus-network:
+    driver: bridge
