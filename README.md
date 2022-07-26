@@ -13,7 +13,7 @@ $ npm install
 ## Running with docker
 
 ```bash
-# Docker with all services # development
+# Docker with all services
 $ docker compose -f "docker-compose.yml" up -d --build
 
 # Docker with only the database
@@ -45,6 +45,9 @@ $ http://localhost:3001/
 
 # API Documentation with Swagger
 $ http://localhost:3001/api
+
+# Project documentation
+$ http://localhost:8080
 
 ```
 
