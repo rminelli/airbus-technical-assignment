@@ -46,7 +46,7 @@ $ http://localhost:3001/
 # API Documentation with Swagger
 $ http://localhost:3001/api
 
-# Project documentation (only at the development level, outside of docker))
+# Project documentation (only at the development level, outside of docker)
 $ http://localhost:8080
 
 ```
