@@ -22,7 +22,6 @@ services:
       restart: always
       depends_on:
         - postgresql-airbus-db
-        - rabbitmq-airbus
       env_file:
         - .development.docker.env
       ports:
